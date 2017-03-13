@@ -38,7 +38,7 @@ module.extract<-function(res.module, mod, n.patients=NULL, n.genes=NULL){
   if(is.null(mod))
     stop("Error: mod: should be specified!");
   if(!mod %in% names(res.module))
-    stop("Error: mod: cannot be recognized!");
+    stop("Error: module.name: cannot be recognized!");
   if(is.null(n.patients) & is.null(n.genes)){
     return(list(genes=res.module[[mod]][["model"]][["genes"]], patients=res.module[[mod]][["model"]][["patients"]]));
   }

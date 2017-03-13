@@ -271,8 +271,7 @@ Plot.deg.specific<-function(input, ann=NULL, col.order=NULL, show.genes=NULL, ma
 #' }
 #'
 #' @export
-Plot.deg.specific.test<-function(input, ann=NULL, col.order=NULL, show.genes=NULL, max.n=30, 
-	up.col="#008000", down.col="#CD5B45"){
+Plot.deg.specific.test<-function(input, ann=NULL, col.order=NULL, show.genes=NULL, max.n=30, up.col="#008000", down.col="#CD5B45"){
     	if(!is.null(ann) & !is(ann,"data.frame"))
      		 stop("Error: ann: should be data.frame!")
 		ges=input[["decd.input"]][["genes"]]
@@ -347,24 +346,18 @@ Plot.deg.specific.test<-function(input, ann=NULL, col.order=NULL, show.genes=NUL
 		col = c("Up" = up.col, "Down" = down.col)
 		if(!is.null(ha)){
 			if(is.null(col.order)){
-				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], bottom_annotation= ha, 
-				alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
+				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], bottom_annotation= ha, alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
 			}
 			else{
-				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, 
-				bottom_annotation= ha, alter_fun = alter_fun, col = col, column_title = "", 
-				heatmap_legend_param = list(title = "DEG"))
+				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, bottom_annotation= ha, alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
 			}
 		}
 		else{
 			if(is.null(col.order)){
-				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]],  
-				alter_fun = alter_fun, col = col, column_title = "", 
-				heatmap_legend_param = list(title = "DEG"))
+				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]],  alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
 			}
 			else{
-				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, 
-				alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
+				oncoPrint(mat.deg, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, alter_fun = alter_fun, col = col, column_title = "", heatmap_legend_param = list(title = "DEG"))
 			}
 		}
 }

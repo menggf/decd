@@ -342,48 +342,31 @@ Plot.cluster.module <-function(res.module, ann=NULL, deg=NULL, col.order=NULL, s
 	if(!is.null(ha)){
 		if(is.null(col.order)){
 			if(is.null(dissimilarity)){
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-						 bottom_annotation=ha, alter_fun = alter_fun, col = mycols, 
-						 column_title = "", show_heatmap_legend = FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], bottom_annotation=ha, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = FALSE)
 			}else{
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-						bottom_annotation=ha, alter_fun = alter_fun, col = mycols, 
-						column_title = "", show_heatmap_legend = TRUE, 
-						heatmap_legend_param = list(title = "Overlap"), show_pct=FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], bottom_annotation=ha, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = TRUE, heatmap_legend_param = list(title = "Overlap"), show_pct=FALSE)
 			}
 		}
 		else{
 			if(is.null(dissimilarity)){
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-					column_order=col.order, bottom_annotation=ha, alter_fun = alter_fun, 
-					col = mycols, column_title = "", show_heatmap_legend = FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, bottom_annotation=ha, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = FALSE)
 			}else{
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-					column_order=col.order, bottom_annotation=ha, alter_fun = alter_fun, 
-					col = mycols, column_title = "", show_heatmap_legend = TRUE,
-					 heatmap_legend_param = list(title = "Overlap"), show_pct=FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, bottom_annotation=ha, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = TRUE, heatmap_legend_param = list(title = "Overlap"), show_pct=FALSE)
 			}
 		}
 	}
 	else{
 		if(is.null(col.order)){
 			if(is.null(dissimilarity)){
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-					alter_fun = alter_fun, col = mycols, column_title = "", 
-					show_heatmap_legend = FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = FALSE)
 			}
 			else{
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-					alter_fun = alter_fun, col = mycols, column_title = "", 
-					show_heatmap_legend = TRUE, heatmap_legend_param = list(title = "Overlap"),  
-					show_pct=FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = TRUE, heatmap_legend_param = list(title = "Overlap"),  show_pct=FALSE)
 			}
 		}
 		else{
 			if(is.null(dissimilarity)){
-				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], 
-					column_order=col.order, alter_fun = alter_fun, col = mycols, 
-					column_title = "", show_heatmap_legend = FALSE)
+				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = FALSE)
 			} else {
 				oncoPrint(mat.shared, get_type = function(x) strsplit(x, ";")[[1]], column_order=col.order, alter_fun = alter_fun, col = mycols, column_title = "", show_heatmap_legend = TRUE, heatmap_legend_param = list(title = "Overlap"), show_pct=FALSE)
 			}

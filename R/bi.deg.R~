@@ -75,9 +75,7 @@ bi.deg<-function(exp, cl, method=c("edger","deseq2","normalized")[1], cutoff=0.0
 		deg=as.matrix(as.data.frame(deg.lst));
 	}
 	if(method=="deseq2"){
-		y=DESeqDataSetFromMatrix(countData =exp[, wh.ct], 
-								 colData = data.frame(lab=rep("control",length(wh.ct))),
-								 design = ~ 1)
+		y=DESeqDataSetFromMatrix(countData =exp[, wh.ct], colData = data.frame(lab=rep("control",length(wh.ct))), design = ~ 1)
 		y <- estimateSizeFactors(y)
 		y <- estimateDispersions(y, quiet=TRUE)
 		disp=dispersions(y)
@@ -85,9 +83,7 @@ bi.deg<-function(exp, cl, method=c("edger","deseq2","normalized")[1], cutoff=0.0
 		mycutoff[disp > quantile(disp, probs=0.97)]=cutoff+0.05
 		rm(y)
 		deg.lst=mclapply(wh.pa, function(x){
-				y=DESeqDataSetFromMatrix(countData =exp[, c(wh.ct, x)], 
-					colData = data.frame(lab=c(rep("control",length(wh.ct)),"disease")), 
-					design = ~ 1)
+				y=DESeqDataSetFromMatrix(countData =exp[, c(wh.ct, x)], colData = data.frame(lab=c(rep("control",length(wh.ct)),"disease")), design = ~ 1)
 				y <- estimateSizeFactors(y);
 				y <- estimateDispersions(y, quiet=TRUE)
 				z2=2**assay(varianceStabilizingTransformation(y));

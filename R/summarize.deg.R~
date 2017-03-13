@@ -39,9 +39,7 @@ summarize.deg.specific<-function(res.deg, max.n=10){
 								length(y[y == -1])})
 	sim=sapply(pas, function(x)  res.deg[[x]]$sc)
 	cutoff=sapply(pas, function(x)  res.deg[[x]]$cutoff)
-	output=data.frame(sample.id=pas, up.regulation.raw=cc1[pas], down.regulation.raw=cc2[pas], 
-		neighbor.patients=deg.pa.len[pas],up.regulation.valdiated=dd1[pas], 
-		down.regulation.validated=dd2[pas], similarity=sim, cutoff=cutoff)
+	output=data.frame(sample.id=pas, up.regulation.raw=cc1[pas], down.regulation.raw=cc2[pas], neighbor.patients=deg.pa.len[pas],up.regulation.valdiated=dd1[pas], down.regulation.validated=dd2[pas], similarity=sim, cutoff=cutoff)
 	output=output[order(output$up.regulation.valdiated + output$down.regulation.validated, decreasing=TRUE),];
 	return(output[1:min(max.n,length(pas)), ])
 }
@@ -88,10 +86,8 @@ summarize.deg.specific.test<-function(res.deg, max.n=10){
 								length(y[y == -1])})
 	sim=sapply(pas, function(x)  res.deg[[x]]$sc)
 	cutoff=sapply(pas, function(x)  res.deg[[x]]$cutoff)
-	output=data.frame(sample.id=pas, up.regulation.raw=cc1[pas], down.regulation.raw=cc2[pas], 
-		neighbor.patients=deg.pa.len[pas],up.regulation.valdiated=dd1[pas], 
-		down.regulation.validated=dd2[pas], similarity=sim, cutoff=cutoff)
-	output=output[order(output$up.regulation.valdiated + output$down.regulation.validated, decreasing=TRUE),];
+	output=data.frame(sample.id=pas, up.regulation.raw=cc1[pas], down.regulation.raw=cc2[pas], neighbor.patients=deg.pa.len[pas],up.regulation.valdiated=dd1[pas], down.regulation.validated=dd2[pas], similarity=sim, cutoff=cutoff)
+	output=output[order(output$up.regulation.valdiated + output$down.regulation.validated, decreasing=T),];
 	#names(output)<-c("sample.id", "up.regulated(raw)", "down.regulated(raw)", "neighbor.patients","up.regulated(valdiated)", "down.regulated(validated)", "similarity", "cutoff")
 	return(output[1:min(max.n,length(pas)), ])
 }

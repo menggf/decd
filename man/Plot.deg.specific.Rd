@@ -45,6 +45,6 @@ Plot(res.deg, ann=er.ann, up.col="#008000", down.col="#CD5B45")
 Guofeng Meng
 }
 \references{
-Gu Z, Eils R and Schlesner M (2016). <U+9225><U+6DD0>omplex heatmaps reveal patterns and correlations in multidimensional genomic data.<U+9225><U+FFFD> Bioinformatics.
+Gu Z, Eils R and Schlesner M (2016). Complex heatmaps reveal patterns and correlations in multidimensional genomic data. Bioinformatics.
 }
 

@@ -32,8 +32,7 @@
 #' }
 #' @export
 
-module.screen<-function(res.module, feature.patients=NULL, feature.genes=NULL, 
-show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
+module.screen<-function(res.module, feature.patients=NULL, feature.genes=NULL, show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 	if(!is(res.module, "seed.module") & !is(res.module, "cluster.module") & !is(res.module, "list"))
 		stop("Error: res.module: must be the output of 'seed.module' or 'cluster.module'!");
 	if(is.null(feature.patients) & is.null(feature.genes))
@@ -74,8 +73,7 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 				if(length(c.total)==0)
 					return(1);
 				p=sapply(1:length(c.feature), function(i){
-					m=matrix(c(c.feature[i], c.total[i]-c.feature[i], xx, 
-					n.add.patients - xx),ncol=2, byrow=TRUE)
+					m=matrix(c(c.feature[i], c.total[i]-c.feature[i], xx, n.add.patients - xx),ncol=2, byrow=T)
 					return(fisher.test(m, alternative="greater")$p.value)
 				})
 				return(min(p));
@@ -100,11 +98,9 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 				c.total=append(c.total, length(have.patients));
 			}
 			num.patients=max(c.total)
-			plot(c(0, max(c.total)), c(0, length(feature.patients[feature.patients%in%add.patients])),
-			 xlab="Total patients",ylab="Observed Features",main="",type="n")
+			plot(c(0, max(c.total)), c(0, length(feature.patients[feature.patients%in%add.patients])), xlab="Total patients",ylab="Observed Features",main="",type="n")
 			points(c.total, c.feature)
-			abline(b=length(feature.patients[feature.patients%in%add.patients])/num.patients, 
-			a=0,col="lightblue", lty=3, lwd=3)
+			abline(b=length(feature.patients[feature.patients%in%add.patients])/num.patients, a=0,col="lightblue", lty=3, lwd=3)
 			lines(c.total, predict(loess(c.feature~c.total), c.total),col="red",lwd=3)
 			legend("topleft",paste("FPs: ", length(feature.patients),sep=""));
 			legend("bottomright",mod);

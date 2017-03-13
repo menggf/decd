@@ -46,6 +46,6 @@ module.compare(res.mod1,res.mod2, type="model", max.n=20)
 Guofeng Meng
 }
 \references{
-Gu Z, Eils R and Schlesner M (2016). Complex heatmaps reveal patterns and correlations in multidimensional genomic data. Bioinformatics.
+Gu Z, Eils R and Schlesner M (2016). <U+9225><U+6DD0>omplex heatmaps reveal patterns and correlations in multidimensional genomic data.<U+9225><U+FFFD> Bioinformatics.
 }
 
