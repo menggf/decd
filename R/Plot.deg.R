@@ -41,7 +41,7 @@ Plot.deg<-function(input, ann=NULL, col.order=NULL, show.genes=NULL, max.n=30, u
 		if(!all(unique(as.vector(input))%in%c(1,-1,0)))
 			stop("Error: deg: valid values are  1, -1 and 0")
 		if(is.null(show.genes)){
-			aa=sort(apply(input, 1, function(x) length(x[x!=0])),decreasing=T);
+			aa=sort(apply(input, 1, function(x) length(x[x!=0])),decreasing=TRUE);
 			show.genes=names(aa[1:min(max.n, dim(input)[1])]);
 			if(aa[length(show.genes)]==0)
 				show.genes=names(aa[aa!=0]);
@@ -167,7 +167,7 @@ Plot.deg.specific<-function(input, ann=NULL, col.order=NULL, show.genes=NULL, ma
 		}
 
 		if(is.null(show.genes)){
-			aa=sort(apply(dmx2, 1, function(x) length(x[x!=0])),decreasing=T);
+			aa=sort(apply(dmx2, 1, function(x) length(x[x!=0])),decreasing=TRUE);
 			show.genes=names(aa[1:min(max.n, dim(dmx2)[1])]);
 			if(aa[length(show.genes)]==0)
 				show.genes=names(aa[aa!=0]);
