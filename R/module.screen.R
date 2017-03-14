@@ -84,9 +84,9 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 
 		names(pa.overlap)<-used.mods;
 		if(method=="ratio")
-			sort.mods = names(sort(pa.overlap, decreasing=T))
+			sort.mods = names(sort(pa.overlap, decreasing=TRUE))
 		else{
-			sort.mods = names(sort(pa.overlap, decreasing=F))
+			sort.mods = names(sort(pa.overlap, decreasing=FALSE))
 		}
 		show.n=min(show.n, length(sort.mods))
 		par(mfrow=trans.sq(show.n), mar=c(5, 4, 1, 2)+0.1);
@@ -114,7 +114,11 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 		ge.overlap=sapply(used.mods, function(x) length(feature.genes[feature.genes%in%res.module[[x]][["max.genes"]][["genes"]]])/length(res.module[[x]][["max.genes"]][["genes"]]));
 		names(ge.overlap)<-used.mods;
 		ge.overlap=ge.overlap[ge.overlap > 0];
-		sort.mods = names(sort(ge.overlap, decreasing=TRUE))
+		sort.mods = names(sort(ge.overlap, decreasing
+				       
+				       
+				       
+				       RUE))
 		show.n=min(show.n, length(sort.mods))
 		par(mfrow=trans.sq(show.n), mar=c(5, 4, 1, 2)+0.1)
 		for(mod in sort.mods[1:show.n]){
