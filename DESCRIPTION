@@ -18,7 +18,7 @@ Imports:
     methods,
     stats,
     grDevices,
-    graphics,
+    graphics
 Suggests:
   knitr
 LinkingTo: Rcpp
