@@ -33,7 +33,7 @@ This function will be automatic used by \code{\link{seed.module}} and \code{\lin
 
 'keep.gene.num' can a integer value or a vector. If it is a integer number, all the modules will have the same 'keep.gene.num'. If it is a vector, its elements should use module name as their names. Otherwise, only the first element will be used and all the modules will be set. When 'keep.gene.num' is vector, it is not necessary to have the same length as modules. It is possible to only changes some of the modules. And the left modules will use the default setting.
 
-Another way to modify the modelling results is to change the 'model.method'. In this version, 'model.method' has four possible values: "slope.clustering", "max.square", "min.slope" and "min.similarity", which indicate the different four different modelling methods:
+Another way to modify the modelling results is to change the 'method'. In this version, 'method' has four possible values: "slope.clustering", "max.square", "min.slope" and "min.similarity", which indicate the different four different modelling methods:
  'slope.clustering' has maximum slope changes, which may indicate the inclusion/exclusion of molecular mechanism.
  'max.square' is the gene-patients number that has the maximum product;
  'min.slope' is the point with minimum slope in gene-patient number curve;
