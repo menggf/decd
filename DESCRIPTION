@@ -23,6 +23,6 @@ Imports:
 Suggests:
   knitr
 LinkingTo: Rcpp
-biocViews: Microarray, DifferentialExpression, Disease, Clustering, RNASeq
+biocViews: DifferentialExpression, BiomedicalInformatics, Clustering, SystemsBiology, Transcriptomics
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
