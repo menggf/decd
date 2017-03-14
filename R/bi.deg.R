@@ -112,7 +112,7 @@ bi.deg<-function(exp, cl, method=c("edger","deseq2","normalized")[1], cutoff=0.0
 		deg.lst=mclapply(wh.pa, function(x){
 			w=exp[,x];
 			z=(w-mu)/sd;
-			p=pnorm(z,lower.tail=F);
+			p=pnorm(z,lower.tail=FALSE);
 			bi=sapply(p, function(w){
 						if(w < cutoff )
 							return(1)
