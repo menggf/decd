@@ -8,7 +8,7 @@ Description: It is designed to find the differential expressed genes (DEGs) for 
 License: GPL-3
 LazyData: TRUE
 Dependence:
-    R (>3.2.0)
+    R (>3.3.0)
 Imports:
     Rcpp (>= 0.12.7),
     parallel,
