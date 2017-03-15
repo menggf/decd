@@ -37,4 +37,5 @@ import(stats)
 import(grDevices)
 import(Rcpp)
 import(grid)
+import(SummarizedExperiment)
 
