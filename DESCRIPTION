@@ -15,7 +15,7 @@ Imports:
     DESeq2,
     edgeR,
     ComplexHeatmap,
-    SummarizedExperiment,
+    SummarizedExperiment (>= 1.1.6),
     methods,
     stats,
     grDevices,
@@ -24,6 +24,6 @@ Imports:
 Suggests:
   knitr
 LinkingTo: Rcpp
-biocViews: DifferentialExpression, BiomedicalInformatics, Clustering, SystemsBiology, Transcriptomics
+biocViews: DifferentialExpression, BiomedicalInformatics, Clustering, SystemsBiology, Transcriptomics, GeneExpression
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
