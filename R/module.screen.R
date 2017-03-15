@@ -112,19 +112,15 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 	}
 	if(!is.null(feature.genes)){
 		ge.overlap=sapply(used.mods, function(x) length(feature.genes[feature.genes%in%res.module[[x]][["max.genes"]][["genes"]]])/length(res.module[[x]][["max.genes"]][["genes"]]));
-		names(ge.overlap)<-used.mods;
+		names(ge.overlap) <- used.mods;
 		ge.overlap=ge.overlap[ge.overlap > 0];
-		sort.mods = names(sort(ge.overlap, decreasing
-				       
-				       
-				       
-				       RUE))
+		sort.mods = names(sort(ge.overlap, decreasing = TRUE))
 		show.n=min(show.n, length(sort.mods))
 		par(mfrow=trans.sq(show.n), mar=c(5, 4, 1, 2)+0.1)
 		for(mod in sort.mods[1:show.n]){
 			remove=res.module[[mod]][["genes.removed"]];
 			seed=res.module[[mod]][["seed"]]
-			seed.genes=names(seed[seed!=0]);
+			seed.genes=names(seed[seed != 0]);
 			c.feature=vector();
 			c.total=vector();
 			for(i in 1:(length(remove))){
@@ -133,10 +129,10 @@ show.mods=NULL, show.n=4, method=c("ratio","fisher.test")[1], cores=1){
 				c.total=append(c.total, length(have.genes));
 			}
 			num.genes=max(c.total);
-			plot(c.total, c.feature, xlab="Total genes",ylab="Observed Features",main="")
-			abline(b=length(feature.genes)/num.genes, a=0,col="lightblue", lty=3, lwd=3)
-			lines(c.total, predict(loess(c.feature~c.total), c.total),col="red",lwd=3)
-			legend("topleft",paste("FGs: ", length(feature.genes),sep=""),cex=0.8);
+			plot(c.total, c.feature, xlab="Total genes", ylab="Observed Features", main="")
+			abline(b=length(feature.genes)/num.genes, a=0, col="lightblue", lty=3, lwd=3)
+			lines(c.total, predict(loess(c.feature~c.total), c.total), col="red", lwd=3)
+			legend("topleft",paste("FGs: ", length(feature.genes),sep=""), cex=0.8);
 			legend("bottomright",mod);
 		}
 	}
