@@ -15,6 +15,7 @@ Imports:
     DESeq2,
     edgeR,
     ComplexHeatmap,
+    SummarizedExperiment,
     methods,
     stats,
     grDevices,
