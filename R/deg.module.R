@@ -127,7 +127,7 @@ seed.module<-function(deg, res.deg=NULL, test.patients=NULL, min.genes=100, min.
 		else{
 			print("No module is found!");
 		}
-		attr(res, "class") <- "deg.module"
+		attr(res, "class") <- "seed.module"
 		return(res);
 	}
 	used.pas=pas
